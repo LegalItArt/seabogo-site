@@ -15,6 +15,12 @@
 <meta property="og:url" content="https://seabogo.synitart.com/">
 <meta property="og:title" content="SeaBogo · 선박·어선 중개 — 어선 매물부터 해외 바이어까지">
 <meta property="og:description" content="어선·선박 매물 정리, 국내 매수자와 해외 바이어 연결, 거래 순서 안내. SynItArt의 선박·어선 중개 SeaBogo.">
+<meta property="og:image" content="https://seabogo.synitart.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SeaBogo · 선박·어선 중개">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta name="author" content="Syn Dae Sik (신대식, 申大湜)">
 <meta name="theme-color" content="#0B1220">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -83,6 +89,29 @@ nav a:hover{color:var(--accent)}
 @media(min-width:720px){.motionbtn{right:32px}}
 @media(prefers-reduced-motion:reduce){.lane i{animation:none}.motionbtn{display:none}}
 
+/* 1. 첫 화면 2단: 글 | 대표 장치 */
+.hero .grid{display:grid;gap:32px;align-items:center}
+.hcopy{display:grid;gap:16px;align-content:start}
+.hpanel{display:grid;gap:12px;padding:24px;border-radius:20px;background:rgb(21 32 51 / .82);border:1px solid var(--border);box-shadow:0 24px 60px rgb(0 0 0 / .35)}
+.hpanel .ph{font-size:22px;line-height:1.35}
+.hpanel .note{margin-top:4px}
+.hpanel .steps{grid-template-columns:1fr;gap:8px}
+.hpanel .steps li{grid-template-columns:44px 1fr;align-items:baseline;gap:2px 12px;padding:12px 16px;border-top:0;border-left:4px solid var(--accent);border-radius:12px}
+.hpanel .steps .sn{grid-row:span 2}
+.hpanel .steps b{font-size:20px}
+.hpanel .twocol{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+.hpanel .twocol .col{padding:16px}
+.hpanel .twocol h3{font-size:20px}
+.hpanel .twocol ul{gap:8px;margin-top:8px}
+.hpanel .twocol li{gap:0 8px}
+.hpanel .twocol .law{font-size:15px}
+.hpanel .spec th,.hpanel .spec td{padding:10px 12px}
+@media(min-width:960px){.hero .grid{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px}.hero{padding-block:48px 112px}}
+/* 3. 허브로 돌아가는 출구 표지판 */
+.exit{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:4px 12px;border-radius:8px;background:#0F5C3A;border:2px solid #F5F7FA;color:#F5F7FA;font-weight:800;font-size:16px;text-decoration:none;box-shadow:0 0 0 2px #0B1220}
+.exit .n{background:#F5F7FA;color:#0F5C3A;border-radius:4px;padding:0 6px;font-size:14px;font-variant-numeric:tabular-nums}
+.exit:hover{transform:translateX(-2px)}
+@media(prefers-reduced-motion:reduce){.exit:hover{transform:none}}
 .sec{padding-block:48px}
 .sec+.sec{border-top:1px solid var(--border)}
 .sec-head{display:grid;gap:8px;margin-bottom:24px}
@@ -138,7 +167,8 @@ footer a{color:var(--text);text-decoration:underline;text-underline-offset:4px;d
 
 @media print{
   :root{--bg:#FFFFFF;--surface:#F8FAFC;--text:#0F172A;--muted:#475569;--border:#94A3B8;--hold:#475569;--accent:#035E7B;--on-accent:#FFFFFF;--wa:#0F172A;--wb:#0F172A}
-  .lane,.motionbtn,.glow,.skip{display:none!important}
+  .lane,.motionbtn,.glow,.skip,.exit{display:none!important}
+  .hpanel{box-shadow:none;background:var(--surface)}
   .hero{padding-block:16px}
   .sec,.works li,.steps li,.twocol .col{break-inside:avoid}
   a{color:var(--text)}
@@ -155,27 +185,27 @@ footer a{color:var(--text);text-decoration:underline;text-underline-offset:4px;d
       <a href="#people">답하는 사람</a>
       <a href="#contact">문의</a>
     </nav>
+    <a class="exit" href="https://synitart.com/#exits" aria-label="SynItArt 출구 안내로 돌아가기, EXIT 04"><span class="n">EXIT 04</span><span>출구 안내</span></a>
   </div>
 </header>
 <main id="main">
 <section class="hero" id="top" aria-labelledby="heroH">
   <div class="glow" aria-hidden="true"></div>
-  <div class="wrap">
-    <p class="eyebrow">선박·어선 중개 · Vessel Brokerage</p>
-    <h1 id="heroH">어선 매물부터<br>해외 바이어까지</h1>
-    <p class="lead">어선·선박을 팔거나 사려는 분께 매물 정리, 상대방 찾기, 거래 순서를 안내합니다. 해외 바이어는 AI로 후보를 찾고 사람이 확인합니다.</p>
-    <div class="cta"><a class="btn btn-fill" href="mailto:synitart@gmail.com?subject=SeaBogo%20%EB%AC%B8%EC%9D%98">매물·매수 문의 →</a><a class="more" href="#detail">사양표 항목 보기</a></div>
+  <div class="wrap grid">
+    <div class="hcopy">
+      <p class="eyebrow">선박·어선 중개 · Vessel Brokerage</p>
+      <h1 id="heroH">어선 매물부터<br>해외 바이어까지</h1>
+      <p class="lead">어선·선박을 팔거나 사려는 분께 매물 정리, 상대방 찾기, 거래 순서를 안내합니다. 해외 바이어는 AI로 후보를 찾고 사람이 확인합니다.</p>
+      <div class="cta"><a class="btn btn-fill" href="mailto:synitart@gmail.com?subject=SeaBogo%20%EB%AC%B8%EC%9D%98">매물·매수 문의 →</a><a class="more" href="#works">하는 일 보기</a></div>
+    </div>
+    <aside class="hpanel" id="detail" aria-labelledby="detailH">
+      <h2 class="ph" id="detailH">매물 등록 때 받는 기본 사양</h2>
+      <div class="tblwrap"><table class="spec"><caption class="sr">기본 사양 항목</caption><thead><tr><th scope="col">항목</th><th scope="col">English</th><th scope="col">단위</th></tr></thead><tbody><tr><th scope="row">선명</th><td lang="en">Vessel name</td><td class="u">—</td></tr><tr><th scope="row">총톤수</th><td lang="en">Gross tonnage</td><td class="u">GT</td></tr><tr><th scope="row">전장</th><td lang="en">Length overall</td><td class="u">m</td></tr><tr><th scope="row">건조 연도</th><td lang="en">Year built</td><td class="u">년</td></tr><tr><th scope="row">주기관 출력</th><td lang="en">Main engine power</td><td class="u">kW (마력)</td></tr><tr><th scope="row">어업 허가 종류</th><td lang="en">Fishing license</td><td class="u">—</td></tr></tbody></table></div>
+      <p class="note">해외 바이어에게 그대로 보낼 수 있도록 영문을 함께 적습니다.</p>
+    </aside>
   </div>
   <div class="lane" aria-hidden="true"><i></i></div>
   <button class="motionbtn" id="motionBtn" type="button" aria-pressed="false">배경 움직임 끄기</button>
-</section>
-
-<section class="sec" id="detail" aria-labelledby="detailH">
-  <div class="wrap">
-    <div class="sec-head"><h2 id="detailH">매물 등록 때 받는 기본 사양</h2></div>
-    <div class="tblwrap"><table class="spec"><caption class="sr">기본 사양 항목</caption><thead><tr><th scope="col">항목</th><th scope="col">English</th><th scope="col">단위</th></tr></thead><tbody><tr><th scope="row">선명</th><td lang="en">Vessel name</td><td class="u">—</td></tr><tr><th scope="row">총톤수</th><td lang="en">Gross tonnage</td><td class="u">GT</td></tr><tr><th scope="row">전장</th><td lang="en">Length overall</td><td class="u">m</td></tr><tr><th scope="row">건조 연도</th><td lang="en">Year built</td><td class="u">년</td></tr><tr><th scope="row">주기관 출력</th><td lang="en">Main engine power</td><td class="u">kW (마력)</td></tr><tr><th scope="row">어업 허가 종류</th><td lang="en">Fishing license</td><td class="u">—</td></tr></tbody></table></div>
-    <p class="note">해외 바이어에게 그대로 보낼 수 있도록 영문을 함께 적습니다.</p>
-  </div>
 </section>
 
 <section class="sec" id="works" aria-labelledby="worksH">
